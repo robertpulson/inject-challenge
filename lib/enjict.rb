@@ -2,7 +2,7 @@ class Array
 
   def enjict(*args)
 
-    if args[0].is_a?(Fixnum) && args[1].is_a?(Symbol)
+    if args.length == 2 && args[0].is_a?(Fixnum) && args[1].is_a?(Symbol)
       start, symbol = args
     elsif args.length == 1
       raise ArgumentError unless args.first.is_a?(Symbol) || args.first.is_a?(Fixnum)
@@ -13,11 +13,9 @@ class Array
     end
     
     copiedArray = dup
-    if start
-      output = start
-    else
-      output = copiedArray.shift
-    end
+
+    start ? output = start : output = copiedArray.shift
+    
     if block_given?
       copiedArray.each { |num| output = yield(output, num) }
     else
