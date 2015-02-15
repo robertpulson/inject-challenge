@@ -5,7 +5,7 @@ class Array
   end
 
   def injector(*args)
-    if args.length == 2
+    if args[0].is_a?(Fixnum) && args[1].is_a?(Symbol)
       start, symbol = args
     elsif args.length == 1
       symbol = args.first if args.first.is_a?(Symbol)

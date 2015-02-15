@@ -43,4 +43,10 @@ describe Array do
     expect(array.injector(1){ |sum, num| sum / num }).to eq(array.inject(1){ |sum, num| sum / num })
   end
 
+  it 'will return an error if two incorrect args are passed' do
+    fill_array
+    expect{ array.injector(1,1) }.to raise_error(ArgumentError)
+  end
+
+
 end
