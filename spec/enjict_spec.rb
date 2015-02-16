@@ -40,4 +40,8 @@ describe Array do
     expect{ array.enjict("string") }.to raise_error(ArgumentError)
   end
 
+  it 'will return an error if three args are passed' do
+    expect{ array.enjict(0, 1, :+) }.to raise_error(ArgumentError)
+  end
+
 end

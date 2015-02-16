@@ -14,14 +14,14 @@ class Array
     
     copiedArray = dup
 
-    start ? output = start : output = copiedArray.shift
+    start = copiedArray.shift unless start
     
     if block_given?
-      copiedArray.each { |num| output = yield(output, num) }
+      copiedArray.each { |num| start = yield(start, num) }
     else
-      copiedArray.each { |num| output = output.send(symbol, num) }
+      copiedArray.each { |num| start = start.send(symbol, num) }
     end
-    output
+    start
   end
 end
 
