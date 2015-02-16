@@ -24,3 +24,10 @@ class Array
     output
   end
 end
+
+
+#array = [1, 2, 3]
+#array.inject(:+) = 6
+#array.inject{ |output, num| output + num } = 6
+#array.inject(0, :+) = 6
+#array.inject(0) { |output, num| output + num } = 6

@@ -12,6 +12,10 @@ describe Array do
     expect(array.enjict(:-)).to eq(-4)
   end
 
+  it 'can receive an arg and a symbol and return the correct result' do
+    expect(array.enjict(1, :+)).to eq(array.inject(1, :+))
+  end
+
   it 'returns an error if no arguement is passed' do
     expect{ array.enjict }.to raise_error(ArgumentError)
   end
