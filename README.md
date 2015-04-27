@@ -4,7 +4,7 @@ The goal of this challenge was to re-write the Ruby method `.inject`.
 
 # What does it do?
 
-The inject method is performed on an Array and is passed either a block or a symbol. It can also be passed an initial value.
+The inject method is called on an Array and is passed either a block or a symbol. It can also be passed an initial value.
 It uses the block or symbol on each element of the array and accumulates the value as it iterates.
 
 # Examples
